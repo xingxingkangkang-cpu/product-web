@@ -1,0 +1,98 @@
+[
+  {
+    "sceneId": "scene_001",
+    "componentId": "comp_001",
+    "sceneCode": "ORDER_CREATE",
+    "sceneName": "创建订单",
+    "businessOwner": "张三",
+    "techOwner": "李四",
+    "todayCalls": 45000,
+    "totalCalls": 3200000,
+    "successRate": 99.9,
+    "avgLatency": 40
+  },
+  {
+    "sceneId": "scene_002",
+    "componentId": "comp_001",
+    "sceneCode": "ORDER_QUERY",
+    "sceneName": "查询订单",
+    "businessOwner": "张三",
+    "techOwner": "王五",
+    "todayCalls": 80000,
+    "totalCalls": 5600000,
+    "successRate": 99.7,
+    "avgLatency": 35
+  },
+  {
+    "sceneId": "scene_003",
+    "componentId": "comp_002",
+    "sceneCode": "USER_LOGIN",
+    "sceneName": "用户登录",
+    "businessOwner": "赵六",
+    "techOwner": "钱七",
+    "todayCalls": 60000,
+    "totalCalls": 4000000,
+    "successRate": 98.5,
+    "avgLatency": 100
+  },
+  {
+    "sceneId": "scene_004",
+    "componentId": "comp_002",
+    "sceneCode": "USER_REGISTER",
+    "sceneName": "用户注册",
+    "businessOwner": "赵六",
+    "techOwner": "孙八",
+    "todayCalls": 15000,
+    "totalCalls": 800000,
+    "successRate": 95.2,
+    "avgLatency": 150
+  },
+  {
+    "sceneId": "scene_005",
+    "componentId": "comp_003",
+    "sceneCode": "PAYMENT_PROCESS",
+    "sceneName": "支付处理",
+    "businessOwner": "周九",
+    "techOwner": "吴十",
+    "todayCalls": 30000,
+    "totalCalls": 2000000,
+    "successRate": 99.9,
+    "avgLatency": 200
+  },
+  {
+    "sceneId": "scene_006",
+    "componentId": "comp_004",
+    "sceneCode": "STOCK_CHECK",
+    "sceneName": "库存校验",
+    "businessOwner": "郑十一",
+    "techOwner": "王十二",
+    "todayCalls": 20000,
+    "totalCalls": 1500000,
+    "successRate": 85.3,
+    "avgLatency": 300
+  },
+  {
+    "sceneId": "scene_007",
+    "componentId": "comp_005",
+    "sceneCode": "SEND_SMS",
+    "sceneName": "发送短信",
+    "businessOwner": "刘十三",
+    "techOwner": "陈十四",
+    "todayCalls": 50000,
+    "totalCalls": 3500000,
+    "successRate": 99.5,
+    "avgLatency": 70
+  },
+  {
+    "sceneId": "scene_008",
+    "componentId": "comp_006",
+    "sceneCode": "GET_RECOMMEND",
+    "sceneName": "获取推荐",
+    "businessOwner": "杨十五",
+    "techOwner": "黄十六",
+    "todayCalls": 25000,
+    "totalCalls": 1600000,
+    "successRate": 97.8,
+    "avgLatency": 130
+  }
+]

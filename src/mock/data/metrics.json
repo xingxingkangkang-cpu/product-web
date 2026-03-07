@@ -1,0 +1,60 @@
+[
+  {
+    "componentId": "comp_001",
+    "data": [
+      { "timestamp": "2026-03-04T00:00:00Z", "qps": 120, "p50": 30, "p95": 60, "p99": 100, "errorRate": 0.001, "cpu": 30, "memory": 40 },
+      { "timestamp": "2026-03-04T01:00:00Z", "qps": 80, "p50": 25, "p95": 50, "p99": 80, "errorRate": 0.0005, "cpu": 20, "memory": 35 },
+      { "timestamp": "2026-03-04T02:00:00Z", "qps": 50, "p50": 20, "p95": 40, "p99": 70, "errorRate": 0.0002, "cpu": 15, "memory": 30 },
+      { "timestamp": "2026-03-04T03:00:00Z", "qps": 40, "p50": 18, "p95": 35, "p99": 60, "errorRate": 0.0001, "cpu": 12, "memory": 28 },
+      { "timestamp": "2026-03-04T04:00:00Z", "qps": 30, "p50": 15, "p95": 30, "p99": 50, "errorRate": 0.0, "cpu": 10, "memory": 25 },
+      { "timestamp": "2026-03-04T05:00:00Z", "qps": 40, "p50": 18, "p95": 35, "p99": 60, "errorRate": 0.0001, "cpu": 12, "memory": 28 },
+      { "timestamp": "2026-03-04T06:00:00Z", "qps": 80, "p50": 25, "p95": 50, "p99": 80, "errorRate": 0.0005, "cpu": 20, "memory": 35 },
+      { "timestamp": "2026-03-04T07:00:00Z", "qps": 150, "p50": 35, "p95": 70, "p99": 120, "errorRate": 0.002, "cpu": 35, "memory": 45 },
+      { "timestamp": "2026-03-04T08:00:00Z", "qps": 300, "p50": 45, "p95": 90, "p99": 150, "errorRate": 0.003, "cpu": 50, "memory": 55 },
+      { "timestamp": "2026-03-04T09:00:00Z", "qps": 450, "p50": 55, "p95": 110, "p99": 180, "errorRate": 0.004, "cpu": 65, "memory": 65 },
+      { "timestamp": "2026-03-04T10:00:00Z", "qps": 500, "p50": 60, "p95": 120, "p99": 200, "errorRate": 0.005, "cpu": 70, "memory": 70 },
+      { "timestamp": "2026-03-04T11:00:00Z", "qps": 480, "p50": 58, "p95": 115, "p99": 190, "errorRate": 0.0045, "cpu": 68, "memory": 68 },
+      { "timestamp": "2026-03-04T12:00:00Z", "qps": 350, "p50": 50, "p95": 100, "p99": 170, "errorRate": 0.0035, "cpu": 55, "memory": 60 },
+      { "timestamp": "2026-03-04T13:00:00Z", "qps": 300, "p50": 45, "p95": 90, "p99": 150, "errorRate": 0.003, "cpu": 50, "memory": 55 },
+      { "timestamp": "2026-03-04T14:00:00Z", "qps": 400, "p50": 52, "p95": 105, "p99": 175, "errorRate": 0.004, "cpu": 60, "memory": 62 },
+      { "timestamp": "2026-03-04T15:00:00Z", "qps": 420, "p50": 54, "p95": 110, "p99": 185, "errorRate": 0.0042, "cpu": 62, "memory": 64 },
+      { "timestamp": "2026-03-04T16:00:00Z", "qps": 380, "p50": 48, "p95": 95, "p99": 160, "errorRate": 0.0038, "cpu": 58, "memory": 58 },
+      { "timestamp": "2026-03-04T17:00:00Z", "qps": 320, "p50": 42, "p95": 85, "p99": 140, "errorRate": 0.0032, "cpu": 52, "memory": 52 },
+      { "timestamp": "2026-03-04T18:00:00Z", "qps": 250, "p50": 38, "p95": 75, "p99": 120, "errorRate": 0.0025, "cpu": 45, "memory": 48 },
+      { "timestamp": "2026-03-04T19:00:00Z", "qps": 180, "p50": 32, "p95": 65, "p99": 100, "errorRate": 0.0018, "cpu": 38, "memory": 42 },
+      { "timestamp": "2026-03-04T20:00:00Z", "qps": 120, "p50": 28, "p95": 55, "p99": 85, "errorRate": 0.0012, "cpu": 28, "memory": 38 },
+      { "timestamp": "2026-03-04T21:00:00Z", "qps": 80, "p50": 22, "p95": 45, "p99": 70, "errorRate": 0.0008, "cpu": 20, "memory": 32 },
+      { "timestamp": "2026-03-04T22:00:00Z", "qps": 50, "p50": 18, "p95": 35, "p99": 55, "errorRate": 0.0005, "cpu": 15, "memory": 28 },
+      { "timestamp": "2026-03-04T23:00:00Z", "qps": 30, "p50": 15, "p95": 30, "p99": 45, "errorRate": 0.0002, "cpu": 10, "memory": 25 }
+    ]
+  },
+  {
+    "componentId": "comp_002",
+    "data": [
+      { "timestamp": "2026-03-04T00:00:00Z", "qps": 80, "p50": 90, "p95": 180, "p99": 300, "errorRate": 0.005, "cpu": 25, "memory": 35 },
+      { "timestamp": "2026-03-04T01:00:00Z", "qps": 50, "p50": 80, "p95": 160, "p99": 280, "errorRate": 0.004, "cpu": 18, "memory": 28 },
+      { "timestamp": "2026-03-04T02:00:00Z", "qps": 30, "p50": 70, "p95": 140, "p99": 250, "errorRate": 0.003, "cpu": 12, "memory": 22 },
+      { "timestamp": "2026-03-04T03:00:00Z", "qps": 20, "p50": 65, "p95": 130, "p99": 230, "errorRate": 0.002, "cpu": 10, "memory": 20 },
+      { "timestamp": "2026-03-04T04:00:00Z", "qps": 15, "p50": 60, "p95": 120, "p99": 200, "errorRate": 0.001, "cpu": 8, "memory": 18 },
+      { "timestamp": "2026-03-04T05:00:00Z", "qps": 20, "p50": 65, "p95": 130, "p99": 230, "errorRate": 0.002, "cpu": 10, "memory": 20 },
+      { "timestamp": "2026-03-04T06:00:00Z", "qps": 50, "p50": 80, "p95": 160, "p99": 280, "errorRate": 0.004, "cpu": 18, "memory": 28 },
+      { "timestamp": "2026-03-04T07:00:00Z", "qps": 100, "p50": 100, "p95": 200, "p99": 350, "errorRate": 0.008, "cpu": 30, "memory": 40 },
+      { "timestamp": "2026-03-04T08:00:00Z", "qps": 200, "p50": 120, "p95": 240, "p99": 420, "errorRate": 0.012, "cpu": 45, "memory": 50 },
+      { "timestamp": "2026-03-04T09:00:00Z", "qps": 300, "p50": 140, "p95": 280, "p99": 480, "errorRate": 0.015, "cpu": 55, "memory": 60 },
+      { "timestamp": "2026-03-04T10:00:00Z", "qps": 350, "p50": 150, "p95": 300, "p99": 500, "errorRate": 0.018, "cpu": 60, "memory": 65 },
+      { "timestamp": "2026-03-04T11:00:00Z", "qps": 320, "p50": 145, "p95": 290, "p99": 480, "errorRate": 0.017, "cpu": 58, "memory": 63 },
+      { "timestamp": "2026-03-04T12:00:00Z", "qps": 250, "p50": 130, "p95": 260, "p99": 450, "errorRate": 0.014, "cpu": 50, "memory": 55 },
+      { "timestamp": "2026-03-04T13:00:00Z", "qps": 200, "p50": 120, "p95": 240, "p99": 420, "errorRate": 0.012, "cpu": 45, "memory": 50 },
+      { "timestamp": "2026-03-04T14:00:00Z", "qps": 280, "p50": 135, "p95": 270, "p99": 460, "errorRate": 0.015, "cpu": 52, "memory": 58 },
+      { "timestamp": "2026-03-04T15:00:00Z", "qps": 300, "p50": 140, "p95": 280, "p99": 480, "errorRate": 0.016, "cpu": 55, "memory": 60 },
+      { "timestamp": "2026-03-04T16:00:00Z", "qps": 260, "p50": 130, "p95": 260, "p99": 450, "errorRate": 0.014, "cpu": 50, "memory": 55 },
+      { "timestamp": "2026-03-04T17:00:00Z", "qps": 220, "p50": 125, "p95": 250, "p99": 430, "errorRate": 0.013, "cpu": 48, "memory": 52 },
+      { "timestamp": "2026-03-04T18:00:00Z", "qps": 180, "p50": 115, "p95": 230, "p99": 400, "errorRate": 0.011, "cpu": 42, "memory": 48 },
+      { "timestamp": "2026-03-04T19:00:00Z", "qps": 140, "p50": 105, "p95": 210, "p99": 360, "errorRate": 0.009, "cpu": 35, "memory": 42 },
+      { "timestamp": "2026-03-04T20:00:00Z", "qps": 100, "p50": 95, "p95": 190, "p99": 330, "errorRate": 0.007, "cpu": 28, "memory": 38 },
+      { "timestamp": "2026-03-04T21:00:00Z", "qps": 70, "p50": 85, "p95": 170, "p99": 300, "errorRate": 0.005, "cpu": 22, "memory": 32 },
+      { "timestamp": "2026-03-04T22:00:00Z", "qps": 45, "p50": 75, "p95": 150, "p99": 260, "errorRate": 0.004, "cpu": 16, "memory": 26 },
+      { "timestamp": "2026-03-04T23:00:00Z", "qps": 25, "p50": 65, "p95": 130, "p99": 230, "errorRate": 0.002, "cpu": 12, "memory": 22 }
+    ]
+  }
+]

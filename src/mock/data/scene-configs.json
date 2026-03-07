@@ -1,0 +1,45 @@
+[
+  {
+    "sceneId": "scene_001",
+    "componentId": "comp_001",
+    "config": {
+      "title": "创建订单 - 调用明细",
+      "filters": [
+        { "field": "userId", "label": "用户ID", "type": "input", "placeholder": "请输入用户ID" },
+        { "field": "time", "label": "时间范围", "type": "daterange" }
+      ],
+      "table": {
+        "columns": [
+          { "field": "requestId", "label": "请求ID", "width": 200 },
+          { "field": "userId", "label": "用户ID", "width": 120 },
+          { "field": "params", "label": "请求参数", "render": "json" },
+          { "field": "response", "label": "响应结果", "render": "json" },
+          { "field": "latency", "label": "耗时(ms)", "sorter": true, "width": 100 }
+        ],
+        "pageSize": 10
+      },
+      "charts": [
+        { "type": "line", "x": "time", "y": "count", "title": "调用量趋势" }
+      ]
+    }
+  },
+  {
+    "sceneId": "scene_002",
+    "componentId": "comp_001",
+    "config": {
+      "title": "查询订单 - 调用明细",
+      "filters": [
+        { "field": "orderId", "label": "订单号", "type": "input" }
+      ],
+      "table": {
+        "columns": [
+          { "field": "requestId", "label": "请求ID", "width": 200 },
+          { "field": "orderId", "label": "订单号", "width": 150 },
+          { "field": "latency", "label": "耗时(ms)", "sorter": true }
+        ],
+        "pageSize": 10
+      },
+      "charts": []
+    }
+  }
+]

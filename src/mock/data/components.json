@@ -1,0 +1,74 @@
+[
+  {
+    "componentId": "comp_001",
+    "name": "订单服务",
+    "version": "v1.2.0",
+    "status": "healthy",
+    "healthScore": 98,
+    "todayCalls": 125430,
+    "totalCalls": 8901200,
+    "successRate": 99.8,
+    "avgLatency": 45,
+    "lastUpdate": "2026-03-05T10:30:00Z"
+  },
+  {
+    "componentId": "comp_002",
+    "name": "用户认证",
+    "version": "v2.0.1",
+    "status": "warning",
+    "healthScore": 92,
+    "todayCalls": 89012,
+    "totalCalls": 5600000,
+    "successRate": 94.5,
+    "avgLatency": 120,
+    "lastUpdate": "2026-03-05T10:30:00Z"
+  },
+  {
+    "componentId": "comp_003",
+    "name": "支付网关",
+    "version": "v3.1.4",
+    "status": "healthy",
+    "healthScore": 99,
+    "todayCalls": 45678,
+    "totalCalls": 3200000,
+    "successRate": 99.9,
+    "avgLatency": 210,
+    "lastUpdate": "2026-03-05T10:30:00Z"
+  },
+  {
+    "componentId": "comp_004",
+    "name": "库存服务",
+    "version": "v1.0.5",
+    "status": "error",
+    "healthScore": 75,
+    "todayCalls": 23456,
+    "totalCalls": 1800000,
+    "successRate": 82.1,
+    "avgLatency": 350,
+    "lastUpdate": "2026-03-05T10:30:00Z"
+  },
+  {
+    "componentId": "comp_005",
+    "name": "消息通知",
+    "version": "v2.3.0",
+    "status": "healthy",
+    "healthScore": 97,
+    "todayCalls": 67890,
+    "totalCalls": 4500000,
+    "successRate": 99.2,
+    "avgLatency": 80,
+    "lastUpdate": "2026-03-05T10:30:00Z"
+  },
+  {
+    "componentId": "comp_006",
+    "name": "推荐引擎",
+    "version": "v1.5.2",
+    "status": "healthy",
+    "healthScore": 96,
+    "todayCalls": 34567,
+    "totalCalls": 2100000,
+    "successRate": 98.7,
+    "avgLatency": 150,
+    "lastUpdate": "2026-03-05T10:30:00Z"
+  }
+]
