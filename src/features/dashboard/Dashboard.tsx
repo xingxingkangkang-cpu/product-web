@@ -1,7 +1,7 @@
 ﻿/**
  * Dashboard page with filter bar, summary cards and component list.
  */
-import { Card, Col, Empty, Row, Tag, message } from 'antd';
+import { Col, Empty, Row, Tag, message } from 'antd';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getComponents } from '@/api/componentApi';
@@ -95,7 +95,7 @@ export function Dashboard(): JSX.Element {
     }, undefined);
   }, [components]);
 
-  const alertComponents = useMemo(() => components.filter((item) => item.status !== 'healthy').sort(sortComponents), [components]);
+  const alertCount = useMemo(() => components.filter((item) => item.status !== 'healthy').length, [components]);
   const orderedComponents = useMemo(() => [...components].sort(sortComponents), [components]);
 
   const handleCardClick = (componentId: string): void => {
@@ -104,10 +104,10 @@ export function Dashboard(): JSX.Element {
   };
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-4">
       <FilterBar
         componentCount={components.length}
-        alertCount={alertComponents.length}
+        alertCount={alertCount}
         lastUpdatedAt={latestUpdatedAt}
         refreshing={refreshing}
         onRefresh={() => void fetchComponents('refresh')}
@@ -128,42 +128,8 @@ export function Dashboard(): JSX.Element {
           <section className="space-y-3">
             <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
               <div>
-                <h2 className="section-title">告警组件</h2>
-                <p className="section-description">优先展示当前预警或异常组件，便于第一时间处理。</p>
-              </div>
-              <Tag color={alertComponents.length > 0 ? 'warning' : 'success'} className={`app-tag w-fit ${alertComponents.length > 0 ? 'app-tag-warning' : 'app-tag-success'}`}>
-                {alertComponents.length > 0 ? `${alertComponents.length} 个待关注` : '当前无告警'}
-              </Tag>
-            </div>
-
-            {alertComponents.length > 0 ? (
-              <Row gutter={[16, 16]}>
-                {alertComponents.map((item) => (
-                  <Col key={`alert-${item.componentId}`} xs={24} sm={12} xl={8}>
-                    <ComponentCard component={item} onClick={handleCardClick} />
-                  </Col>
-                ))}
-              </Row>
-            ) : (
-              <Card className="enterprise-panel rounded-[24px] border-0" styles={{ body: { padding: 18 } }}>
-                <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                  <div>
-                    <h3 className="text-base font-semibold tracking-tight text-emerald-800">当前暂无告警组件</h3>
-                    <p className="mt-1 text-sm text-emerald-700">系统运行平稳，实时流会继续监听新的预警与异常状态。</p>
-                  </div>
-                  <Tag color="success" className="app-tag app-tag-success w-fit">
-                    运行平稳
-                  </Tag>
-                </div>
-              </Card>
-            )}
-          </section>
-
-          <section className="space-y-3">
-            <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-              <div>
                 <h2 className="section-title">全部组件</h2>
-                <p className="section-description">组件列表按状态优先级与健康度排序，告警组件会自动靠前显示。</p>
+                <p className="section-description">组件列表按状态优先级与健康度排序，便于直接查看最需要关注的组件。</p>
               </div>
               <Tag color="blue" className="app-tag app-tag-blue w-fit">
                 共 {orderedComponents.length} 个组件
