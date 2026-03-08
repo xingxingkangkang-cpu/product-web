@@ -41,8 +41,9 @@ export function SceneDetail(): JSX.Element {
   }, [sceneId, componentId]);
 
   return (
-    <div className="space-y-4">
+    <div className="scene-shell">
       <Breadcrumb
+        className="scene-breadcrumb w-fit"
         items={[
           { title: <Link to="/dashboard">首页</Link> },
           { title: <Link to={`/component/${componentId}`}>组件详情</Link> },
@@ -50,21 +51,22 @@ export function SceneDetail(): JSX.Element {
         ]}
       />
 
-      <Card className="rounded-xl border border-slate-200 shadow-sm">
-        <h2 className="text-lg font-semibold text-slate-800">{config?.title || '场景明细'}</h2>
-        <p className="mt-1 text-sm text-slate-500">
+      <Card className="scene-title-panel rounded-[28px] border-0" styles={{ body: { padding: 24 } }}>
+        <p className="label-eyebrow mb-2">Scene Detail</p>
+        <h2 className="text-[28px] font-semibold tracking-tight text-slate-900">{config?.title || '场景明细'}</h2>
+        <p className="mt-2 text-sm text-slate-500">
           Scene ID: {sceneId} | Component ID: {componentId}
         </p>
       </Card>
 
       {loading ? (
-        <div className="rounded-xl bg-white p-10 text-center shadow-sm">
+        <div className="enterprise-panel rounded-[24px] p-10 text-center">
           <Spin />
         </div>
       ) : config ? (
         <DynamicRenderer config={config} />
       ) : (
-        <Card className="rounded-xl border border-slate-200 shadow-sm">
+        <Card className="enterprise-panel rounded-[24px] border-0">
           <Empty description="暂无场景配置" />
         </Card>
       )}

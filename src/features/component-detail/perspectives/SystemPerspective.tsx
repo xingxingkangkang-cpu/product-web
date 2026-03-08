@@ -1,9 +1,9 @@
-﻿/**
+/**
  * System perspective with metric trends, error codes and topology placeholder.
  */
-import { Card, Empty } from 'antd';
 import type { ProColumns } from '@ant-design/pro-components';
 import { ProTable } from '@ant-design/pro-components';
+import { Card, Empty } from 'antd';
 import type { EChartsOption } from 'echarts';
 import { useEffect, useMemo, useState } from 'react';
 import { getMetrics } from '@/api/componentApi';
@@ -86,7 +86,7 @@ export function SystemPerspective(props: SystemPerspectiveProps): JSX.Element {
           smooth: true,
           data: metrics.map((item) => item.qps),
           yAxisIndex: 0,
-          lineStyle: { width: 2, color: '#1677ff' },
+          lineStyle: { width: 2.4, color: '#2563eb' },
         },
         {
           name: 'P95(ms)',
@@ -94,7 +94,7 @@ export function SystemPerspective(props: SystemPerspectiveProps): JSX.Element {
           smooth: true,
           data: metrics.map((item) => item.p95),
           yAxisIndex: 0,
-          lineStyle: { width: 2, color: '#fa8c16' },
+          lineStyle: { width: 2.4, color: '#f59e0b' },
         },
         {
           name: '错误率',
@@ -102,7 +102,7 @@ export function SystemPerspective(props: SystemPerspectiveProps): JSX.Element {
           smooth: true,
           data: metrics.map((item) => item.errorRate),
           yAxisIndex: 1,
-          lineStyle: { width: 2, color: '#ef4444' },
+          lineStyle: { width: 2.4, color: '#ef4444' },
         },
       ],
     }),
@@ -124,22 +124,24 @@ export function SystemPerspective(props: SystemPerspectiveProps): JSX.Element {
 
   return (
     <div className="space-y-4">
-      <Card className="rounded-xl border border-slate-200 shadow-sm" bodyStyle={{ padding: 12 }}>
-        <h4 className="mb-2 text-sm font-medium text-slate-700">核心时序指标</h4>
+      <Card className="enterprise-panel rounded-[24px] border-0" bodyStyle={{ padding: 16 }}>
+        <h4 className="panel-title">核心时序指标</h4>
         {metrics.length === 0 ? <Empty description="暂无时序数据" /> : <BaseChart option={lineOption} height={320} loading={loading} />}
       </Card>
 
-      <ProTable<ErrorCodeRow>
-        rowKey="errorCode"
-        columns={columns}
-        dataSource={errorCodes}
-        search={false}
-        options={false}
-        pagination={false}
-      />
+      <div className="enterprise-table">
+        <ProTable<ErrorCodeRow>
+          rowKey="errorCode"
+          columns={columns}
+          dataSource={errorCodes}
+          search={false}
+          options={false}
+          pagination={false}
+        />
+      </div>
 
-      <Card className="rounded-xl border border-dashed border-slate-300 bg-slate-50 shadow-sm">
-        <h4 className="mb-2 text-sm font-medium text-slate-700">依赖拓扑</h4>
+      <Card className="topology-panel rounded-[24px] border-0 shadow-none">
+        <h4 className="panel-title">依赖拓扑</h4>
         <p className="text-sm text-slate-500">当前为占位模块，可接入 Graph / G6 进行服务依赖拓扑渲染。</p>
       </Card>
     </div>

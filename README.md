@@ -1,13 +1,13 @@
 # product-perception-system
 
-产品感知系统前端演示工程，基于 React 18、TypeScript 和 Vite 构建，当前使用 MSW 模拟接口数据，适合用于原型展示、界面联调和前端能力验证。
+产品感知系统前端演示工程，基于 React 18、TypeScript 和 Vite 构建，当前使用 MSW 模拟接口数据，并在拦截不可用时自动回退到本地 mock 数据，适合用于原型展示、界面联调和前端能力验证。
 
 ## 项目特性
 
 - 组件总览首页，支持筛选、实时状态展示和指标卡片浏览
 - 组件详情页，支持场景感知、模式感知、系统感知三类视角切换
 - 场景详情页，根据配置动态渲染筛选项、表格和图表
-- 使用 MSW 拦截接口请求，开发阶段无需真实后端即可联调
+- 使用 MSW 拦截接口请求，并在拦截不可用时自动回退到本地 mock 数据
 - 结合 Ant Design、ECharts 和 Framer Motion 提供较完整的交互体验
 
 ## 技术栈
@@ -89,7 +89,7 @@ src/
 
 ## 模拟数据与接口
 
-模拟数据位于 `src/mock/data/`，开发环境中由 MSW 拦截请求。
+模拟数据位于 `src/mock/data/`，开发环境中优先由 MSW 拦截请求；若当前运行环境未成功拦截 `/api/*`，前端会自动回退到同一份本地 mock 数据。
 
 当前接口包括：
 
@@ -102,7 +102,7 @@ src/
 
 ## 开发说明
 
-- `src/main.tsx` 中仅在开发环境启动 MSW
+- `src/main.tsx` 中仅在开发环境启动 MSW；接口层同时内置本地 mock fallback，避免静态预览时将 HTML 误当 JSON 解析
 - `public/mockServiceWorker.js` 为 MSW Worker 文件，需要保留在仓库中
 - `dist/`、`node_modules/`、`*.tsbuildinfo` 等构建产物或缓存文件不应提交
 

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Compact line chart used in dashboard cards.
  */
 import type { EChartsOption } from 'echarts';
@@ -39,13 +39,13 @@ export function MiniLineChart(props: MiniLineChartProps): JSX.Element {
         smooth: true,
         showSymbol: false,
         lineStyle: {
-          width: 2,
+          width: 2.5,
           color,
         },
         areaStyle: {
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            { offset: 0, color: `${color}66` },
-            { offset: 1, color: `${color}05` },
+            { offset: 0, color: `${color}52` },
+            { offset: 1, color: `${color}08` },
           ]),
         },
       },

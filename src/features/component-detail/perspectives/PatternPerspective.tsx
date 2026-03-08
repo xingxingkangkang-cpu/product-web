@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Pattern perspective with heatmap and cluster cards.
  */
 import { Card, Col, Empty, Row, Tag, message } from 'antd';
@@ -105,7 +105,7 @@ export function PatternPerspective(props: PatternPerspectiveProps): JSX.Element 
       left: 'center',
       bottom: 0,
       inRange: {
-        color: ['#e2e8f0', '#93c5fd', '#1677ff'],
+        color: ['#dbeafe', '#60a5fa', '#2563eb'],
       },
     },
     series: [
@@ -120,8 +120,8 @@ export function PatternPerspective(props: PatternPerspectiveProps): JSX.Element 
 
   return (
     <div className="space-y-4">
-      <Card className="rounded-xl border border-slate-200 shadow-sm" bodyStyle={{ padding: 12 }}>
-        <h4 className="mb-2 text-sm font-medium text-slate-700">参数调用热力图</h4>
+      <Card className="enterprise-panel rounded-[24px] border-0" bodyStyle={{ padding: 16 }}>
+        <h4 className="panel-title">参数调用热力图</h4>
         {heatmapMeta.data.length === 0 ? (
           <Empty description="暂无热力图数据" />
         ) : (
@@ -132,7 +132,7 @@ export function PatternPerspective(props: PatternPerspectiveProps): JSX.Element 
       <Row gutter={[16, 16]}>
         {patternData.clusters.length === 0 ? (
           <Col span={24}>
-            <Card className="rounded-xl border border-slate-200 shadow-sm">
+            <Card className="enterprise-panel rounded-[24px] border-0">
               <Empty description="暂无聚类数据" />
             </Card>
           </Col>
@@ -152,8 +152,8 @@ export function PatternPerspective(props: PatternPerspectiveProps): JSX.Element 
                   type: 'boxplot',
                   data: [cluster.latencyBox],
                   itemStyle: {
-                    color: '#bae0ff',
-                    borderColor: '#1677ff',
+                    color: '#bfdbfe',
+                    borderColor: '#2563eb',
                   },
                 },
               ],
@@ -161,14 +161,14 @@ export function PatternPerspective(props: PatternPerspectiveProps): JSX.Element 
 
             return (
               <Col xs={24} md={12} key={cluster.label}>
-                <Card className="card-hover rounded-xl border border-slate-200 shadow-sm" bodyStyle={{ padding: 12 }}>
+                <Card className="enterprise-panel card-hover rounded-[24px] border-0" bodyStyle={{ padding: 16 }}>
                   <div className="mb-2 flex items-center justify-between">
-                    <h4 className="text-sm font-semibold text-slate-800">{cluster.label}</h4>
-                    <Tag color="blue">聚类</Tag>
+                    <h4 className="panel-title !mb-0 text-slate-800">{cluster.label}</h4>
+                    <Tag color="blue" className="app-tag app-tag-blue">聚类</Tag>
                   </div>
                   <div className="mb-2 flex flex-wrap gap-1.5">
                     {cluster.scenes.map((scene) => (
-                      <Tag key={scene} className="rounded-md">
+                      <Tag key={scene} className="app-tag app-tag-neutral">
                         {scene}
                       </Tag>
                     ))}

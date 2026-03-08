@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Application routes and global providers.
  */
 import { ConfigProvider } from 'antd';
@@ -12,11 +12,41 @@ export default function App(): JSX.Element {
   return (
     <ConfigProvider
       theme={{
+        cssVar: true,
         token: {
-          colorPrimary: '#1677ff',
-          borderRadius: 8,
-          colorBgLayout: '#f1f5f9',
-          boxShadowSecondary: '0 12px 32px rgba(15, 23, 42, 0.08)',
+          colorPrimary: '#2563eb',
+          colorInfo: '#2563eb',
+          colorSuccess: '#059669',
+          colorWarning: '#d97706',
+          colorError: '#dc2626',
+          colorText: '#0f172a',
+          colorTextSecondary: '#475569',
+          colorBorder: 'rgba(148, 163, 184, 0.2)',
+          colorBgLayout: '#edf3f9',
+          colorBgContainer: 'rgba(255, 255, 255, 0.84)',
+          borderRadius: 18,
+          borderRadiusLG: 24,
+          boxShadowSecondary: '0 24px 60px rgba(15, 23, 42, 0.12)',
+        },
+        components: {
+          Card: {
+            borderRadiusLG: 24,
+          },
+          Button: {
+            controlHeight: 40,
+            borderRadius: 14,
+          },
+          Select: {
+            controlHeight: 42,
+            borderRadius: 14,
+          },
+          Menu: {
+            itemBorderRadius: 14,
+            activeBarHeight: 0,
+          },
+          Tag: {
+            borderRadiusSM: 999,
+          },
         },
       }}
     >

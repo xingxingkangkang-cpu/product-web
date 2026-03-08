@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Dashboard summary cards for component fleet overview.
  */
 import { Card, Tag } from 'antd';
@@ -30,12 +30,6 @@ interface DashboardSnapshot {
   totalCalls: number;
   todayCalls: number;
   weightedSuccessRate: number;
-}
-
-interface TrendConfig {
-  positiveGood?: boolean;
-  decimals?: number;
-  suffix?: string;
 }
 
 function formatDelta(delta: number, decimals: number, suffix: string): string {
@@ -125,31 +119,31 @@ export function DashboardSummary(props: DashboardSummaryProps): JSX.Element {
 
   return (
     <div className="mb-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
-      <Card className="rounded-xl border border-slate-200 shadow-sm" styles={{ body: { padding: 18 } }}>
+      <Card className="kpi-card rounded-[26px] border-0" styles={{ body: { padding: 20 } }}>
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-sm text-slate-500">组件总数</p>
-            <p className="mt-2 text-3xl font-semibold text-slate-900">
+            <p className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
               <AnimatedNumber value={summary.totalComponents} suffix=" 个" />
             </p>
           </div>
-          <div className="rounded-xl bg-blue-50 p-3 text-blue-600">
+          <div className="metric-icon metric-icon-blue">
             <Boxes size={20} />
           </div>
         </div>
         <SummaryTrend current={summary.totalComponents} previous={previousSummary?.totalComponents} suffix=" 个" />
-        <p className="mt-2 text-sm text-slate-600">健康组件 {formatNumber(summary.healthyCount)} 个</p>
+        <p className="mt-3 text-sm text-slate-600">健康组件 {formatNumber(summary.healthyCount)} 个</p>
       </Card>
 
-      <Card className="rounded-xl border border-slate-200 shadow-sm" styles={{ body: { padding: 18 } }}>
+      <Card className="kpi-card rounded-[26px] border-0" styles={{ body: { padding: 20 } }}>
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-sm text-slate-500">整体健康度</p>
-            <p className="mt-2 text-3xl font-semibold text-slate-900">
+            <p className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
               <AnimatedNumber value={summary.averageHealthScore} decimals={1} suffix=" 分" />
             </p>
           </div>
-          <div className="rounded-xl bg-emerald-50 p-3 text-emerald-600">
+          <div className="metric-icon metric-icon-green">
             <ShieldCheck size={20} />
           </div>
         </div>
@@ -159,34 +153,34 @@ export function DashboardSummary(props: DashboardSummaryProps): JSX.Element {
           decimals={1}
           suffix=" 分"
         />
-        <p className="mt-2 text-sm text-slate-600">整体成功率 {formatPercent(summary.weightedSuccessRate)}</p>
+        <p className="mt-3 text-sm text-slate-600">整体成功率 {formatPercent(summary.weightedSuccessRate)}</p>
       </Card>
 
-      <Card className="rounded-xl border border-slate-200 shadow-sm" styles={{ body: { padding: 18 } }}>
+      <Card className="kpi-card rounded-[26px] border-0" styles={{ body: { padding: 20 } }}>
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-sm text-slate-500">累计调用量</p>
-            <p className="mt-2 text-3xl font-semibold text-slate-900">
+            <p className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
               <AnimatedNumber value={summary.totalCalls} />
             </p>
           </div>
-          <div className="rounded-xl bg-cyan-50 p-3 text-cyan-600">
+          <div className="metric-icon metric-icon-cyan">
             <Waves size={20} />
           </div>
         </div>
         <SummaryTrend current={summary.totalCalls} previous={previousSummary?.totalCalls} suffix=" 次" />
-        <p className="mt-2 text-sm text-slate-600">今日总调用 {formatNumber(summary.todayCalls)}</p>
+        <p className="mt-3 text-sm text-slate-600">今日总调用 {formatNumber(summary.todayCalls)}</p>
       </Card>
 
-      <Card className="rounded-xl border border-slate-200 shadow-sm" styles={{ body: { padding: 18 } }}>
+      <Card className="kpi-card rounded-[26px] border-0" styles={{ body: { padding: 20 } }}>
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-sm text-slate-500">告警状态</p>
-            <p className="mt-2 text-3xl font-semibold text-slate-900">
+            <p className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
               <AnimatedNumber value={summary.alertCount} suffix=" 个" />
             </p>
           </div>
-          <div className={`rounded-xl p-3 ${hasAlert ? 'bg-amber-50 text-amber-600' : 'bg-slate-100 text-slate-500'}`}>
+          <div className={`metric-icon ${hasAlert ? 'metric-icon-amber' : 'metric-icon-blue'}`}>
             <AlertTriangle size={20} />
           </div>
         </div>
@@ -196,8 +190,8 @@ export function DashboardSummary(props: DashboardSummaryProps): JSX.Element {
           suffix=" 个"
           positiveGood={false}
         />
-        <div className="mt-2 flex flex-wrap items-center gap-2">
-          <Tag color={hasAlert ? 'warning' : 'success'} className="rounded-md">
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          <Tag color={hasAlert ? 'warning' : 'success'} className={`app-tag ${hasAlert ? 'app-tag-warning' : 'app-tag-success'}`}>
             {hasAlert ? '当前有告警' : '运行平稳'}
           </Tag>
           <span className="text-sm text-slate-600">预警 {summary.warningCount} / 异常 {summary.errorCount}</span>
@@ -206,4 +200,3 @@ export function DashboardSummary(props: DashboardSummaryProps): JSX.Element {
     </div>
   );
 }
-

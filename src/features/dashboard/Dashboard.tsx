@@ -120,7 +120,7 @@ export function Dashboard(): JSX.Element {
           <SkeletonCard count={6} />
         </div>
       ) : components.length === 0 ? (
-        <div className="rounded-xl bg-white p-10 shadow-sm">
+        <div className="enterprise-panel rounded-[24px] p-10">
           <Empty description="暂无组件数据" />
         </div>
       ) : (
@@ -128,10 +128,10 @@ export function Dashboard(): JSX.Element {
           <section className="space-y-3">
             <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
               <div>
-                <h2 className="text-lg font-semibold text-slate-900">告警组件</h2>
-                <p className="text-sm text-slate-500">优先展示当前预警或异常组件，便于第一时间处理。</p>
+                <h2 className="section-title">告警组件</h2>
+                <p className="section-description">优先展示当前预警或异常组件，便于第一时间处理。</p>
               </div>
-              <Tag color={alertComponents.length > 0 ? 'warning' : 'success'} className="w-fit rounded-md px-2 py-1">
+              <Tag color={alertComponents.length > 0 ? 'warning' : 'success'} className={`app-tag w-fit ${alertComponents.length > 0 ? 'app-tag-warning' : 'app-tag-success'}`}>
                 {alertComponents.length > 0 ? `${alertComponents.length} 个待关注` : '当前无告警'}
               </Tag>
             </div>
@@ -145,13 +145,13 @@ export function Dashboard(): JSX.Element {
                 ))}
               </Row>
             ) : (
-              <Card className="rounded-xl border border-emerald-200 bg-emerald-50/70 shadow-sm" styles={{ body: { padding: 18 } }}>
+              <Card className="enterprise-panel rounded-[24px] border-0" styles={{ body: { padding: 18 } }}>
                 <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                   <div>
-                    <h3 className="text-base font-semibold text-emerald-800">当前暂无告警组件</h3>
+                    <h3 className="text-base font-semibold tracking-tight text-emerald-800">当前暂无告警组件</h3>
                     <p className="mt-1 text-sm text-emerald-700">系统运行平稳，实时流会继续监听新的预警与异常状态。</p>
                   </div>
-                  <Tag color="success" className="w-fit rounded-md px-2 py-1">
+                  <Tag color="success" className="app-tag app-tag-success w-fit">
                     运行平稳
                   </Tag>
                 </div>
@@ -162,10 +162,10 @@ export function Dashboard(): JSX.Element {
           <section className="space-y-3">
             <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
               <div>
-                <h2 className="text-lg font-semibold text-slate-900">全部组件</h2>
-                <p className="text-sm text-slate-500">组件列表按状态优先级与健康度排序，告警组件会自动靠前显示。</p>
+                <h2 className="section-title">全部组件</h2>
+                <p className="section-description">组件列表按状态优先级与健康度排序，告警组件会自动靠前显示。</p>
               </div>
-              <Tag color="blue" className="w-fit rounded-md px-2 py-1">
+              <Tag color="blue" className="app-tag app-tag-blue w-fit">
                 共 {orderedComponents.length} 个组件
               </Tag>
             </div>

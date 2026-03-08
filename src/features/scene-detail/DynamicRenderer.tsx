@@ -72,11 +72,7 @@ export function DynamicRenderer(props: DynamicRendererProps): JSX.Element {
         render: (_, record) => {
           const value = record[column.field];
           if (column.render === 'json') {
-            return (
-              <pre className="max-w-[420px] overflow-auto rounded-md bg-slate-50 p-2 text-xs text-slate-700">
-                {JSON.stringify(value, null, 2)}
-              </pre>
-            );
+            return <pre className="json-preview">{JSON.stringify(value, null, 2)}</pre>;
           }
 
           return <span>{toSafeText(value) || '-'}</span>;
@@ -130,8 +126,9 @@ export function DynamicRenderer(props: DynamicRendererProps): JSX.Element {
 
   return (
     <div className="space-y-4">
-      <Card className="rounded-xl border border-slate-200 shadow-sm">
+      <Card className="enterprise-panel rounded-[24px] border-0" styles={{ body: { padding: 18 } }}>
         <Form
+          className="filter-form-shell"
           layout="inline"
           onValuesChange={(changed, allValues) => {
             const changedValues = changed as Record<string, unknown>;
@@ -155,19 +152,22 @@ export function DynamicRenderer(props: DynamicRendererProps): JSX.Element {
         </Form>
       </Card>
 
-      <ProTable<RowData>
-        rowKey="id"
-        columns={columns}
-        dataSource={filteredRows}
-        search={false}
-        options={false}
-        pagination={{ pageSize: config.table.pageSize || 10 }}
-      />
+      <div className="enterprise-table">
+        <ProTable<RowData>
+          rowKey="id"
+          columns={columns}
+          dataSource={filteredRows}
+          search={false}
+          options={false}
+          pagination={{ pageSize: config.table.pageSize || 10 }}
+        />
+      </div>
 
       {chartOptions.length > 0 ? (
         <Space direction="vertical" className="w-full" size={16}>
           {chartOptions.map((option, index) => (
-            <Card key={`chart-${index}`} className="rounded-xl border border-slate-200 shadow-sm" bodyStyle={{ padding: 10 }}>
+            <Card key={`chart-${index}`} className="enterprise-panel rounded-[24px] border-0" bodyStyle={{ padding: 14 }}>
+              <h4 className="panel-title">{config.charts[index]?.title ?? `图表 ${index + 1}`}</h4>
               <BaseChart option={option} height={280} />
             </Card>
           ))}

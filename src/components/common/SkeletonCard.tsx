@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Skeleton placeholder card for dashboard loading.
  */
 import { Skeleton } from 'antd';
@@ -13,7 +13,7 @@ export function SkeletonCard(props: SkeletonCardProps): JSX.Element {
   return (
     <>
       {Array.from({ length: count }).map((_, index) => (
-        <div key={`skeleton-${index}`} className="card-hover rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div key={`skeleton-${index}`} className="enterprise-panel card-hover rounded-[26px] border-0 p-5">
           <Skeleton active title paragraph={{ rows: 1 }} />
           <div className="mt-4">
             <Skeleton.Input active block className="!h-8" />

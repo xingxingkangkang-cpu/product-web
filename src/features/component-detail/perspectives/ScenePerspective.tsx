@@ -1,9 +1,9 @@
-﻿/**
+/**
  * Scene perspective with top chart and filtered table.
  */
-import { Button, Card, message } from 'antd';
 import type { ProColumns } from '@ant-design/pro-components';
 import { ProTable } from '@ant-design/pro-components';
+import { Button, Card, message } from 'antd';
 import type { EChartsOption } from 'echarts';
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -73,8 +73,8 @@ export function ScenePerspective(props: ScenePerspectiveProps): JSX.Element {
         data: topScenes.map((item) => item.todayCalls),
         barWidth: 28,
         itemStyle: {
-          borderRadius: [6, 6, 0, 0],
-          color: '#1677ff',
+          borderRadius: [8, 8, 0, 0],
+          color: '#2563eb',
         },
       },
     ],
@@ -106,11 +106,12 @@ export function ScenePerspective(props: ScenePerspectiveProps): JSX.Element {
           key="detail"
           size="small"
           type="link"
+          className="link-action"
           onClick={() => window.open(`/scene/${row.sceneId}/${row.componentId}`, '_blank')}
         >
           明细
         </Button>,
-        <Button key="inside" size="small" type="link" onClick={() => navigate(`/scene/${row.sceneId}/${row.componentId}`)}>
+        <Button key="inside" size="small" type="link" className="link-action" onClick={() => navigate(`/scene/${row.sceneId}/${row.componentId}`)}>
           打开
         </Button>,
       ],
@@ -119,11 +120,11 @@ export function ScenePerspective(props: ScenePerspectiveProps): JSX.Element {
 
   return (
     <div className="space-y-4">
-      <Card className="rounded-xl border border-slate-200 shadow-sm" bodyStyle={{ padding: 12 }}>
+      <Card className="enterprise-panel rounded-[24px] border-0" bodyStyle={{ padding: 16 }}>
         <div className="mb-2 flex items-center justify-between">
-          <h4 className="text-sm font-medium text-slate-700">Top 10 场景调用量</h4>
+          <h4 className="panel-title !mb-0">Top 10 场景调用量</h4>
           {selectedSceneCode ? (
-            <Button size="small" onClick={() => setSelectedSceneCode(null)}>
+            <Button size="small" className="action-button" onClick={() => setSelectedSceneCode(null)}>
               清除筛选
             </Button>
           ) : null}
@@ -143,16 +144,18 @@ export function ScenePerspective(props: ScenePerspectiveProps): JSX.Element {
         />
       </Card>
 
-      <ProTable<SceneItem>
-        rowKey="sceneId"
-        columns={columns}
-        dataSource={filteredScenes}
-        loading={loading}
-        search={false}
-        options={false}
-        pagination={{ pageSize: 8 }}
-        className="rounded-xl"
-      />
+      <div className="enterprise-table">
+        <ProTable<SceneItem>
+          rowKey="sceneId"
+          columns={columns}
+          dataSource={filteredScenes}
+          loading={loading}
+          search={false}
+          options={false}
+          pagination={{ pageSize: 8 }}
+          className="rounded-[24px]"
+        />
+      </div>
     </div>
   );
 }
